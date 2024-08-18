@@ -1,0 +1,38 @@
+1)The error you are encountering indicates that you are trying to use TypeScript syntax in a JavaScript environment. The : syntax for type annotations is specific to TypeScript, not JavaScript.
+
+If you want to run this code as TypeScript, you need to make sure it is compiled to JavaScript first. If you are using Node.js, you can set up a TypeScript project and compile your .ts files to .js files. Here's how you can do that:
+
+Initialize a TypeScript project:
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+
+
+Write your TypeScript code:
+Create a file named index.ts with the following content:
+let age: number = 123;
+console.log(age);
+Compile the TypeScript code:
+
+npx tsc
+
+This will compile the TypeScript code to JavaScript and output it in a .js file (by default in the same directory).
+Run the compiled JavaScript code:
+node index.js
+
+
+2)Alternatively, if you want to run your code without compiling, you can use tools like ts-node which allows you to run TypeScript directly:
+
+Install ts-node:
+npm install -g ts-node
+Run the TypeScript file:
+
+ts-node index.ts
+If you want to stick with plain JavaScript and not use TypeScript, you should remove the type annotation:
+
+
+javascript
+let age = 123;
+console.log(age);
+You can run this code directly with Node.js:
+node index.js
